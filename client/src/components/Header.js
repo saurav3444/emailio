@@ -35,9 +35,7 @@ class Header extends Component {
                         Emailio
                     </Link>
                     <ul className="right">
-                        <li>
-                            {this.renderContent()}
-                        </li>
+                        {this.renderContent()}
                     </ul>
                 </div>
             </nav>

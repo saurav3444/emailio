@@ -8,10 +8,11 @@ class Payments extends Component {
         return (
             <StripeCheckout
                 name="Emailio"
-                description="Rs5 for 5 credits"
-                amount={500}
+                description="Rs 100 for 100 credits"
+                amount={10000}
                 token={token => this.props.handleToken(token)}
                 stripeKey={process.env.REACT_APP_STRIPE_KEY}
+                currency='INR'
             >
                 <button className='btn'>
                     ADD CREDITS
