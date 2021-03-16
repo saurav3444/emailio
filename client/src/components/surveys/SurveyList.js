@@ -5,15 +5,15 @@ import { fetchSurveys } from '../../actions';
 class SurveyList extends Component {
 
     componentDidMount() {
-        const a = this.props.fetchSurveys();
+        this.props.fetchSurveys();
     }
 
     renderSurveys() {
 
-        return this.props.surveys.map(survey => {
+        return this.props.surveys.reverse().map(survey => {
             return (
-                <div className="card blue darken-1" key={survey._id}>
-                    <div className="card-content">
+                <div className="card white-grey darken-1" key={survey._id}>
+                    <div className="card-content text-white">
                         <span className="card-title">{survey.title}</span>
                         <p>
                             {survey.body}
@@ -41,8 +41,8 @@ class SurveyList extends Component {
     }
 }
 
-function mapStateToProps({ Surveys }) {
-    return { Surveys };
+function mapStateToProps({ surveys }) {
+    return { surveys };
 }
 
 export default connect(mapStateToProps, { fetchSurveys })(SurveyList);
